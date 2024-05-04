@@ -1,3 +1,4 @@
+local colorscheme = require("plugins.colorscheme")
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -13,6 +14,10 @@ require("lazy").setup({
     {
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
+      opts = {
+        -- colorscheme = "dracula",
+        colorscheme = "solarized-osaka",
+      },
     },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.linting.eslint" },
