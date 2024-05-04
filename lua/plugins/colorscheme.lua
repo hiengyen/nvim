@@ -16,6 +16,7 @@ return {
     opts = {
       -- colorscheme = "dracula",
       colorscheme = "solarized-osaka",
+      -- colorscheme = "gruvbox",
     },
   },
 }
