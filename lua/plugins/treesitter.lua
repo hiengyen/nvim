@@ -22,8 +22,14 @@ return {
         "gowork",
         "gosum",
         --For Python
+        "ninja",
+        "python",
+        "rst",
+        "toml",
         --For Java
         --For Typescript
+        "typescript",
+        "tsx",
       })
     end,
     config = function(_, opts)

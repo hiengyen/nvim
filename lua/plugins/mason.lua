@@ -9,9 +9,9 @@ return {
         "luacheck",
         "shellcheck",
         "shfmt",
+        --For Typescript ...
         "typescript-language-server",
         "css-lsp",
-        -- "taiwindcss-language-server",
         --For Go
         "gopls",
         "goimports",
@@ -19,6 +19,9 @@ return {
         "gomodifytags",
         "impl",
         "delve",
+        --For Python
+        "pyright",
+        "ruff",
       })
     end,
   },
