@@ -9,7 +9,7 @@ return {
         "luacheck",
         "shellcheck",
         "shfmt",
-        --For Typescript ...
+        --For Typescript ..
         "typescript-language-server",
         "css-lsp",
         --For Go
