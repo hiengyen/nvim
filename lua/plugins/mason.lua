@@ -1,10 +1,8 @@
 return {
   {
     "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
 
-    opt = function(_, opts)
+    opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
         "stylua",
         "selene",
@@ -13,7 +11,14 @@ return {
         "shfmt",
         "typescript-language-server",
         "css-lsp",
-        "taiwindcss-language-server",
+        -- "taiwindcss-language-server",
+        --For Go
+        "gopls",
+        "goimports",
+        "gofumpt",
+        "gomodifytags",
+        "impl",
+        "delve",
       })
     end,
   },
