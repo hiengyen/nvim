@@ -1,13 +1,12 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed, {
         "astro",
         "cmake",
         "cpp",
         "css",
-        "fish",
         "gitignore",
         "graphql",
         "http",
@@ -17,8 +16,16 @@ return {
         "scss",
         "sql",
         "svelte",
-      },
-    },
+        --For Go
+        "go",
+        "gomod",
+        "gowork",
+        "gosum",
+        --For Python
+        --For Java
+        --For Typescript
+      })
+    end,
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
 
@@ -29,16 +36,6 @@ return {
         },
       })
       vim.treesitter.language.register("markdown", "mdx")
-    end,
-
-    -- For Go
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, {
-        "go",
-        "gomod",
-        "gowork",
-        "gosum",
-      })
     end,
   },
 }
