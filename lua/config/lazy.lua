@@ -14,10 +14,10 @@ require("lazy").setup({
     {
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
-      opts = {
-        -- colorscheme = "dracula",
-        colorscheme = "solarized-osaka",
-      },
+      -- opts = {
+      -- colorscheme = "dracula",
+      -- colorscheme = "solarized-osaka",
+      -- },
     },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.linting.eslint" },

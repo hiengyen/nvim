@@ -1,6 +1,6 @@
 return {
-  "craftzdog/solarized-osaka.nvim",
-  -- "Mofiqul/dracula.nvim",
+  { "craftzdog/solarized-osaka.nvim", "Mofiqul/dracula.nvim", "ellisonleao/gruvbox.nvim", "catppuccin/nvim" },
+
   lazy = true,
   priority = 1000,
   opts = function()
@@ -8,14 +8,14 @@ return {
   end,
 
   -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
 
-  -- Configure LazyVim to load gruvbox
+  -- Configure LazyVim to load  theme
   {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "dracula",
-      colorscheme = "solarized-osaka",
+      colorscheme = "catppuccin",
+      -- colorscheme = "solarized-osaka",
       -- colorscheme = "gruvbox",
     },
   },
