@@ -1,5 +1,6 @@
 return {
   {
+    --code highlighting
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
@@ -26,7 +27,12 @@ return {
         "python",
         "rst",
         "toml",
-        --For Java
+        --For PHP
+        "php",
+        "json",
+        "json5",
+        "jsonc",
+        "dockerfile",
         --For Typescript
         "typescript",
         "tsx",

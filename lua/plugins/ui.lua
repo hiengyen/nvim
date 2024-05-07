@@ -21,16 +21,6 @@ return {
       timeout = 7000,
     },
   },
-  --statusline
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    opts = {
-      options = {
-        theme = "solarized_dark",
-      },
-    },
-  },
   --incline fileName
   {
     "b0o/incline.nvim",
@@ -85,7 +75,7 @@ return {
     event = "VeryLazy",
     opts = {
       options = {
-        theme = "solarized_dark",
+        theme = "dracula",
       },
     },
   },

@@ -9,7 +9,7 @@ return {
 
   -- add gruvbox
 
-  -- Configure LazyVim to load  theme
+  -- Configure LazyVim to load theme
   {
     "LazyVim/LazyVim",
     opts = {
