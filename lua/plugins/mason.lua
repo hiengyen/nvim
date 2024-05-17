@@ -12,6 +12,7 @@ return {
         --For Typescript ..
         "typescript-language-server",
         "css-lsp",
+        "js-debug-adapter",
         --For Go
         "gopls",
         "goimports",

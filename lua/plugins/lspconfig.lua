@@ -163,63 +163,63 @@ return {
           },
         },
       },
-    },
-    --04_PHP
-    {
-      "neovim/nvim-lspconfig",
-      opts = {
-        -- make sure mason installs the server
-        servers = {
-          jsonls = {
-            -- lazy-load schemastore when needed
-            on_new_config = function(new_config)
-              new_config.settings.json.schemas = new_config.settings.json.schemas or {}
-              vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
-            end,
-            settings = {
-              json = {
-                format = {
-                  enable = true,
+      --04_PHP
+      {
+        "neovim/nvim-lspconfig",
+        opts = {
+          -- make sure mason installs the server
+          servers = {
+            jsonls = {
+              -- lazy-load schemastore when needed
+              on_new_config = function(new_config)
+                new_config.settings.json.schemas = new_config.settings.json.schemas or {}
+                vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
+              end,
+              settings = {
+                json = {
+                  format = {
+                    enable = true,
+                  },
+                  validate = { enable = true },
                 },
-                validate = { enable = true },
               },
             },
+            intelephense = {},
+            dockerls = {},
+            docker_compose_language_service = {},
           },
-          intelephense = {},
-          dockerls = {},
-          docker_compose_language_service = {},
         },
       },
-    },
-    --code formatting
-    {
-      "nvimtools/none-ls.nvim",
-      opts = function(_, opts)
-        local nls = require("null-ls")
-        local composer_globa_dir = vim.fn.expand("$HOME/.config/composer")
-        local composer_global_bin_dir = composer_globa_dir .. "/vendor/bin"
+      --code formatting
+      {
+        "nvimtools/none-ls.nvim",
+        opts = function(_, opts)
+          local nls = require("null-ls")
+          local composer_globa_dir = vim.fn.expand("$HOME/.config/composer")
+          local composer_global_bin_dir = composer_globa_dir .. "/vendor/bin"
 
-        vim.list_extend(opts.sources, {
-          nls.builtins.formatting.phpcsfixer.with({
-            command = composer_global_bin_dir .. "/php-cs-fixer",
-            extra_args = {
-              "--config",
-              composer_globa_dir .. "/.php_cs_fixer.php",
-            },
-          }),
-          nls.builtins.diagnostics.phpstan.with({
-            command = composer_global_bin_dir .. "/phpstan",
-            extra_args = { "-l", "max" },
-          }),
-        })
-      end,
+          vim.list_extend(opts.sources, {
+            nls.builtins.formatting.phpcsfixer.with({
+              command = composer_global_bin_dir .. "/php-cs-fixer",
+              extra_args = {
+                "--config",
+                composer_globa_dir .. "/.php_cs_fixer.php",
+              },
+            }),
+            nls.builtins.diagnostics.phpstan.with({
+              command = composer_global_bin_dir .. "/phpstan",
+              extra_args = { "-l", "max" },
+            }),
+          })
+        end,
+      },
+      --test
+      { "olimorris/neotest-phpunit" },
+      {
+        "nvim-neotest/neotest",
+        opts = { adapters = { "neotest-phpunit" } },
+      },
+      --05
     },
-    --test
-    { "olimorris/neotest-phpunit" },
-    {
-      "nvim-neotest/neotest",
-      opts = { adapters = { "neotest-phpunit" } },
-    },
-    --05
   },
 }
