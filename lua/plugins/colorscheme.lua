@@ -6,8 +6,7 @@ return {
   opts = function()
     return { transparent = true }
   end,
-
-  -- add gruvbox
+  background = "light",
 
   -- Configure LazyVim to load theme
   {

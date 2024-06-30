@@ -23,10 +23,6 @@ return {
         --For Python
         "pyright",
         "ruff",
-        --For PHP
-        "intelephense",
-        "phpstan",
-        "php-cs-fixer",
       })
     end,
   },

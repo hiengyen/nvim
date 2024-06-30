@@ -27,15 +27,9 @@ return {
         "python",
         "rst",
         "toml",
-        --For PHP
-        "php",
-        "json",
-        "json5",
-        "jsonc",
-        "dockerfile",
         --For Typescript
-        "typescript",
-        "tsx",
+        -- "typescript",
+        -- "tsx",
       })
     end,
     config = function(_, opts)
