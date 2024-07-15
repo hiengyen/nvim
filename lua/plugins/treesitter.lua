@@ -28,8 +28,8 @@ return {
         "rst",
         "toml",
         --For Typescript
-        -- "typescript",
-        -- "tsx",
+        "typescript",
+        "tsx",
       })
     end,
     config = function(_, opts)

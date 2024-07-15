@@ -24,12 +24,12 @@ return {
                   vendor = true,
                 },
                 hints = {
-                  assignVariableTypes = true,
+                  -- assignVariableTypes = true,
                   compositeLiteralFields = true,
                   compositeLiteralTypes = true,
                   constantValues = true,
-                  functionTypeParameters = true,
-                  parameterNames = true,
+                  -- functionTypeParameters = true,
+                  -- parameterNames = true,
                   rangeVariableTypes = true,
                 },
                 analyses = {
@@ -39,7 +39,7 @@ return {
                   unusedwrite = true,
                   useany = true,
                 },
-                usePlaceholders = true,
+                -- usePlaceholders = true,
                 completeUnimported = true,
                 staticcheck = true,
                 directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
@@ -131,8 +131,9 @@ return {
             -- explicitly add default filetypes, so that we can extend
             -- them in related extras
             filetypes = {
-              "javascriptreact",
-              "javascript.jsx",
+              -- "javascript",
+              -- "javascriptreact",
+              -- "javascript.jsx",
               "typescript",
               "typescriptreact",
               "typescript.tsx",
