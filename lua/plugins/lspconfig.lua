@@ -131,9 +131,9 @@ return {
             -- explicitly add default filetypes, so that we can extend
             -- them in related extras
             filetypes = {
-              -- "javascript",
-              -- "javascriptreact",
-              -- "javascript.jsx",
+              "javascript",
+              "javascriptreact",
+              "javascript.jsx",
               "typescript",
               "typescriptreact",
               "typescript.tsx",

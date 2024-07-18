@@ -1,4 +1,11 @@
 return {
+  -- devicons
+  {
+    "echasnovski/mini.nvim",
+    version = "*",
+    require("mini.icons").setup(), -- use default config
+  },
+
   --add notify
   {
     "folke/noice.nvim",
