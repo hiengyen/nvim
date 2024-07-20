@@ -8,7 +8,11 @@ return {
           gopls = {
             keys = {
               -- Workaround for the lack of a DAP strategy in neotest-go: https://github.com/nvim-neotest/neotest-go/issues/12
-              { "<leader>td", "<cmd>lua require('dap-go').debug_test()<CR>", desc = "Debug Nearest (Go)" },
+              {
+                "<leader>td",
+                "<cmd>lua require('dap-go').debug_test()<CR>",
+                desc = "Debug Nearest (Go)",
+              },
             },
             settings = {
               gopls = {
@@ -42,7 +46,13 @@ return {
                 -- usePlaceholders = true,
                 completeUnimported = true,
                 staticcheck = true,
-                directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
+                directoryFilters = {
+                  "-.git",
+                  "-.vscode",
+                  "-.idea",
+                  "-.vscode-test",
+                  "-node_modules",
+                },
                 semanticTokens = true,
               },
             },
@@ -55,7 +65,8 @@ return {
             LazyVim.lsp.on_attach(function(client, _)
               if client.name == "gopls" then
                 if not client.server_capabilities.semanticTokensProvider then
-                  local semantic = client.config.capabilities.textDocument.semanticTokens
+                  local semantic =
+                    client.config.capabilities.textDocument.semanticTokens
                   client.server_capabilities.semanticTokensProvider = {
                     full = true,
                     legend = {
@@ -118,6 +129,7 @@ return {
         },
       },
     },
+
     --04 Typescript
     {
       "neovim/nvim-lspconfig",
@@ -131,9 +143,9 @@ return {
             -- explicitly add default filetypes, so that we can extend
             -- them in related extras
             filetypes = {
-              "javascript",
-              "javascriptreact",
-              "javascript.jsx",
+              -- "javascript",
+              -- "javascriptreact",
+              -- "javascript.jsx",
               "typescript",
               "typescriptreact",
               "typescript.tsx",
@@ -211,7 +223,9 @@ return {
               {
                 "<leader>cV",
                 function()
-                  LazyVim.lsp.execute({ command = "typescript.selectTypeScriptVersion" })
+                  LazyVim.lsp.execute({
+                    command = "typescript.selectTypeScriptVersion",
+                  })
                 end,
                 desc = "Select TS workspace version",
               },
@@ -225,7 +239,10 @@ return {
           end,
           vtsls = function(_, opts)
             LazyVim.lsp.on_attach(function(client, buffer)
-              client.commands["_typescript.moveToFileRefactoring"] = function(command, ctx)
+              client.commands["_typescript.moveToFileRefactoring"] = function(
+                command,
+                ctx
+              )
                 ---@type string, string, lsp.Range
                 local action, uri, range = unpack(command.arguments)
 
@@ -275,8 +292,12 @@ return {
               end
             end, "vtsls")
             -- copy typescript settings to javascript
-            opts.settings.javascript =
-              vim.tbl_deep_extend("force", {}, opts.settings.typescript, opts.settings.javascript or {})
+            opts.settings.javascript = vim.tbl_deep_extend(
+              "force",
+              {},
+              opts.settings.typescript,
+              opts.settings.javascript or {}
+            )
           end,
         },
       },

@@ -1,5 +1,5 @@
 return {
-  { "craftzdog/solarized-osaka.nvim", "Mofiqul/dracula.nvim", "ellisonleao/gruvbox.nvim", "catppuccin/nvim" },
+  { "Mofiqul/dracula.nvim" },
 
   lazy = true,
   priority = 1000,
@@ -13,9 +13,6 @@ return {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "dracula",
-      -- colorscheme = "catppuccin",
-      -- colorscheme = "solarized-osaka",
-      -- colorscheme = "gruvbox",
     },
   },
 }
